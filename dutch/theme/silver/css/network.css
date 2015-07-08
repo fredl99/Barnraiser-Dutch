@@ -1,0 +1,25 @@
+@media print {
+}
+
+@media screen {
+
+}
+
+@media screen,print {
+	#col_left { float:left; display: inline; width: 548px; }
+	#col_right { float:left; width: 200px;  margin-left:30px; }
+
+	#box_notifications, #box_people { border-width: 0px; }
+	#box_notifications .box_header h1, #box_people .box_header h1 { margin-bottom: 20px; font-size: 1.2em; }
+	
+	#box_submit_contribution textarea { height: 80px; width: 98%; margin:0px; padding: 0px; }
+
+	#box_networks .box_body { max-height: 300px; overflow-y: scroll; }
+
+	.replies { margin: 30px; }
+	.replies ul { list-style-type: none; margin: 0px; padding: 0px; }
+	.replies ul li { margin-bottom: 10px; border-bottom: 1px dotted #dcdcdc; }
+	.replies ul li:last-child { margin-bottom: 10px; border-bottom: 1px dotted #dcdcdc; }
+	.replies textarea { width:98%; }
+	.reply { margin-top:10px; margin-left: 10px; }
+}

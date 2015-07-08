@@ -1,0 +1,17 @@
+@media print {
+}
+
+@media screen {
+	#col_left { float:left; display: inline; width: 548px; }
+	#col_right { float:left; width: 200px;  margin-left:30px; }
+
+}
+
+@media screen,print {
+	#id_content_box, #id_addons_box { border-width: 0px; }
+	#id_content_box h1, #id_addons_box h1 { font-size: 1.2em; }
+
+	#id_dob_year { width: 55px; }
+	#id_dob_month { width: 45px; }
+	#id_dob_day { width: 45px; }
+}

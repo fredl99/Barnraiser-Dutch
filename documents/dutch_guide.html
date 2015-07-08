@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="en" />
+
+	
+	<title>Barnraiser</title>
+
+	
+	
+	<style type="text/css">
+	<!--
+	@import url(/theme/barnraiser/css/common.css);
+	@import url(/theme/barnraiser/css/dutch_guide.css);
+	-->
+	</style>
+
+	
+	<script type="text/javascript" src="/template/js/functions.js"></script>
+
+	<script type="text/javascript">
+	//<![CDATA[
+		var session_maxlifetime_ms = 107880000;
+
+		function ShowTimeoutWarning () {
+			// we append the time to the string to avoid caching
+			var urldate = new Date()
+			var urltime = urldate.getTime()
+			document.session_reload_image.src = '/get_file.php?reloadsession=start&now=' + urltime;
+			setTimeout( 'ShowTimeoutWarning();', session_maxlifetime_ms );
+		}
+	//]]>
+	</script>
+	
+	<link href="http://www.barnraiser.org/feed/rss.php" rel="alternate" type="application/rss+xml" title="RSS feed" />
+	<link rel="icon" href="/theme/barnraiser/img/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/theme/barnraiser/img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body onload="setTimeout( 'ShowTimeoutWarning();', session_maxlifetime_ms );">
+
+		<div style="display: none;">
+		Giving people the tools they need to share knowledge and advance open society through social software.	</div>
+		
+	<div id="content_container">
+		<div id="header_container">
+			
+			<p class="logo">
+				<a href="/view"><img src="/theme/barnraiser/img/logo.png" alt="Logo" border="0" /></a>
+			</p>
+			<ul>
+
+								<li><a href="/view">Home</a></li>
+
+								<li><a href="/about">About us</a></li>
+				
+								<li><a href="/software">Software</a></li>
+				
+								<li><a href="/donate">Donate</a></li>
+				
+				<li><a href="http://build.barnraiser.org/">Community</a></li>
+
+							</ul>	
+		</div>
+		<div style="clear:both;"></div>
+
+				
+		<div id="body_container">
+			<div id="col_left">
+	<a name="toc"></a>
+	<div class="box" id="box_contents">
+		<div class="box_header">
+			<h1>Contents</h1>
+		</div>
+
+		<div class="box_body">
+			<ol>
+				<li>Installation</li>
+				<ol>
+					<li><a href="#install_requirements">Requirements</a></li>
+					<li><a href="#install_procedure">Installation procedure</a></li>
+					<li><a href="#install_cron">Cron jobs</a></li>
+				</ol>
+				
+				<li>Using Dutch</li>
+				<ol>
+					<li><a href="#user_registration">Registration and login</a></li>
+					<li><a href="#user_account">Account screen</a></li>
+					<li><a href="#user_join_network">Joining networks</a></li>
+					<li><a href="#user_notify">Notifications</a></li>
+					<li><a href="#user_profile">Following people</a></li>
+					<li><a href="#user_create_network">Creating a network</a></li>
+				</ol>
+				
+				<li>Administering Dutch</li>
+				<ol>
+					<li><a href="#system_introduction">Introduction</a></li>
+					<li><a href="#system_management">System settings</a></li>
+					<li><a href="#account_management">Account administration</a></li>
+				</ol>
+				
+				<li>Customising Dutch</li>
+				<ol>
+					<li><a href="#custom_introduction">Introduction</a></li>
+					<li><a href="#custom_themes">Themes</a></li>
+					<li><a href="#custom_templates">Templates</a></li>
+					<li><a href="#custom_language">Language support</a></li>
+				</ol>
+				
+				<li>Appendix</li>
+				<ol style="list-style-type: upper-alpha">
+					<li><a href="#appendix_log">Getting support</a></li>
+					<li><a href="#appendix_log">Contributing</a></li>
+				</ol>
+			</ol>
+		</div>
+	</div>
+</div>
+
+
+<div id="col_right">
+	<div class="box" id="box_guide">
+		<div class="box_header">
+			<h1>Dutch users guide</h1>
+		</div>
+
+		<div class="box_body">
+			<p>
+				Dutch is a lightweight social tool to allow you and the people around you to gather and share information quickly and easily. It is released under <a href="http://www.gnu.org/licenses/gpl.html" target="_new">The GNU General Public License</a> and maintained by <a href="http://tom.calthrop.info" target="_new">Tom Calthrop</a> at <a href="http://www.barnraiser.org" target="_new">Barnraiser</a>. For an overview of features please visit the <a href="http://www.barnraiser.org/dutch">product page</a>.
+			</p>
+			
+			<h1>Installation</h1>
+			<p>
+				Dutch includes with it an installer. An understanding of FTP, changing directory privileges and web servers is required. Please read the terms of the license prior to installation.
+			</p>
+
+			<a name="install_requirements"></a>
+			<h2>Requirements</h2>
+			<p>
+				Dutch requires a web server running either Apache 1.3/2.x or IIS5/IIS6 with PHP5.x installed including GD library, Gettext, Curl and BCMath. The installer does its best to detect these for you so if you are unsure simply proceed to installation.
+			</p>
+			
+			<a name="install_procedure"></a>
+			<h2>Installation procedure</h2>
+			<p>
+				Download the latest release of Dutch and unzip/untar it onto your local computer. FTP all the files up a directory on your web server. Make a note of the path to the index.php file which will be something like "/public_html/dutch_20080920/dutch/". The above path will be used for all following examples.
+			</p>
+
+			<p>
+				Note: Please ensure the ".htaccess" file (a hidden file) is also copied up when you FTP.
+			</p>
+			
+			<p>
+				Point your domain or sub-domain to the directory which contains index.php. Change any permissions to allow PHP access to the scripts.
+			</p>
+			
+			<p>
+				Point your browser to your domain name and follow the instructions on screen.
+			</p>
+			
+			<a name="install_procedure"></a>
+			<h2>Cron jobs</h2>
+			<p>
+				A weekly digest is sent out autmoatically using Cron. You can edit your crontab file through a web admin tool such as CPanel or from the server command line using a command line editor.
+			</p>
+
+			<p>
+				If using the command line type in 'crontab -l' to show the crontab file or 'crontab -e' to edit it. Add the following line:
+			</p>
+
+			<code>
+				*/5 * * * * /usr/bin/php -q var/www/public_html/dutch_20080920/dutch/cron/email_digest.php
+			</code>
+
+			<p>
+				Replace with your path to PHP and path to the installation cron directory.
+			</p>
+			
+			<h1>Using Dutch</h1>
+			<p>
+				If you are not the person who installed Dutch you will need to register.
+			</p>
+			
+			<a name="user_registration"></a>
+			<h2>Registration and login</h2>
+			<p>
+				Click the registration button on the top of the page and follow the instructions. After registration you will be returned to the main page where you can log in.
+			</p>
+			
+			<a name="user_account"></a>
+			<h2>Account screen</h2>
+			<p>
+				Once you are logged in you will see an "Account" link at the top of your web page. Press it. From the account page you can change your profile information, password and email address.
+			</p>
+			
+			<p>
+				Please note that the memorable date will be requested should you request a new password.
+			</p>
+			
+			<p>
+				You can upload a JPG, GIF or PNG picture to use for your profile picture.
+			</p>
+			
+			<a name="user_join_network"></a>
+			<h2>Joining networks</h2>
+			<p>
+				Click the 'Networks' link at the top of the page. You will see a cloud containing the most popular networks. Select one. You are now looking at that network together with the contributions posted under it. You can add a contribution and/or press 'Join this network' to join the network. If you join the network you will begin to get notifications of activity within the network. 
+			</p>
+			
+			<a name="user_notify"></a>
+			<h2>Notifications</h2>
+			<p>
+				Click the 'Notifications' link at the top of the page. Notifications list all activity (new posts and contributions) for your networks (those that you have joined) and for people that you are following (see 'Following people').
+			</p>
+			
+			<a name="user_profile"></a>
+			<h2>Following people</h2>
+			<p>
+				You can create a relationship with a peron so that you get notifications when they post a contribution. Go to a persons profile page by clicking on their name and you will see a 'Create relationship' button. Press it to create a relationship. Once you do so they will appear in a list in your notification page. You can remove them by returning to their profile page and pressing 'Remove relationship'.
+			</p>
+
+			
+			<a name="user_create_network"></a>
+			<h2>Creating a network</h2>
+			<p>
+				From the networks page you can create a network. Type in the name of the network. If it is already made you will be taken to it. If it is new you will be taken to the new network and you will see a system contribution telling everyone when the network was started.
+			</p>
+			
+			
+			<a name="system_introduction"></a>
+			<h1>Administering Dutch</h1>
+			<p>
+				Any account holder can be elevated to be a 'maintainer' (or administrator). As a maintainer they can send new passwords, add language packs and generally maintain the system. If you are a maintainer you will see an additional link at the top of your web page labelled 'Maintain'.
+			</p>
+			
+			<a name="system_management"></a>
+			<h2>System settings</h2>
+			<p>
+				From the maintain screen you can change the following system settings:
+			</p>
+
+			<ul>
+				<li><b>Language configuration</b><br />Dutch defaults to English. If you would like to overrule this by installing a language pack please visit the <a href="http://www.barnraiser.org/dutch">Dutch product page</a>, download the language pack and follow the instructions written within it.</li>
+				<li><b>Maintainer configuration</b><br />Each account holder has an OpenID name (which is also the subdomain). You can give certain account holders permission to enter this maintain screen by adding them. Use a comma to separate each name.</li>
+				<li><b>Authorized email domains</b><br />You may want to setup Dutch to only allow registration from certain email domains such as example_company.com or example_organisation.org. You can limit registration to these by entering them. Leave the field blank to allow any email domain to register. Use a comma to separate each domain name.</li>
+			</ul>
+			
+			<a name="account_management"></a>
+			<h2>Account administration</h2>
+			<p>
+				You will see an account summary box on the maintain page. This displays a summary of accounts.
+			</p>
+
+			<p>
+				An account has one of two states. Pending which indicated that the user has registered, but not clicked the link in the registration email yet, and Live which means the account is operational.
+			</p>
+
+			<p>
+				Press the "view accounts" link to list all accounts. Each account is listed with their ID as a link. Select a user by pressing their ID number.
+			</p>
+
+			<p>
+				If the account is pending you will have the option to update their details and send them another confirmation email.
+			</p>
+
+			<p>
+				If the account is live you will have the option to update their details and send them an email containing a new password.
+			</p>
+			
+			<a name="custom_introduction"></a>
+			<h1>Customising Dutch</h1>
+			<p>
+				The GNU General Public License allows you to customise Dutch in anyway you like. We supply three standard approaches to help you acheive this; themes, templates and language packs.
+			</p>
+
+			<a name="custom_themes"></a>
+			<h2>Themes</h2>
+			<p>
+				A theme is a "style" or "look and feel" that can be added to Dutch. Themes can be downloaded and copied into the "themes" directory. You will need to edit the config file to change the default theme for now (a theme selector will be added later).
+			</p>
+
+			<p>
+				The easiest way to customise a theme is to copy a current theme, rename it and edit the files within it. Each file is named after the page that it is used on. A common CSS file is used across each page. You can customise the theme using a combination of CSS and images.
+			</p>
+
+			<p>
+				You are welcome to put the theme as a zip or tar file on your website and include the same GPL license that we use for Dutch. If you do and you tell us we will add the theme to our list of available themes.
+			</p>
+			
+			<a name="custom_templates"></a>
+			<h2>Templates</h2>
+			<p>
+				The template can be edited by anyone with an understanding of HTML. The wrapper.tpl.php file builds the main top and bottom menus. A second template is inserted which displays the relevant page information. If you are going to edit a template backup your work first.
+			</p>
+
+			<a name="custom_language"></a>
+			<h2>Language support</h2>
+			<p>
+				To install another interface language download the relevant language pack from the <a href="http://www.barnraiser.org/dutch">Dutch product page</a> and follow the instructions located in the install.txt file.
+			</p>
+
+			<p>
+				Language packs are created using "gettext". If you want to create a language pack you can download a graphical user interface from http://www.poedit.net and follow their instructions to edit the language pack.
+			</p>
+
+			<p>
+				You are welcome to put the language pack as a zip or tar file on your website and include the same GPL license that we use for Dutch. If you do and you tell us we will add the language pack to our list of available language packs.
+			</p>
+			
+			<h1>Appendix</h1>
+			
+			<a name="appendix_log"></a>
+			<h2>Getting support</h2>
+			<p>
+				Please visit the <a href="http://build.barnraiser.org/network/dutch_support" target="_new">Dutch support network</a> in our <a href="http://build.barnraiser.org/" target="new">network</a> to submit any feedback on this document. This includes and tips and tricks you find that may help others in our community.
+			</p>
+			
+			<a name="appendix_log"></a>
+			<h2>Contributing</h2>
+			<p>
+				 Our goal is that Dutch remains lightweight and simple to use. If you have ideas that follow along these lines then please tell us by visiting our <a href="http://build.barnraiser.org/" target="new">network</a> and adding to our <a href="http://build.barnraiser.org/network/dutch_feedback" target="_new">Dutch feedback network</a>.
+			</p>
+		</div>
+
+		<div class="box_footer">
+			Last updated 23rd September 2008 by <a href="http://tom.calthrop.info">Tom Calthrop</a>.
+		</div>
+	</div>
+</div>		</div>
+		
+		<div style="clear:both;"></div>
+		
+		<div id="footer_container">
+			<ul>
+				<li>This work is licensed under a <a href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License</a>.</li>
+								<li><a href="http://babelfish.altavista.com/?url=http%3A%2F%2Fwww.barnraiser.org%2Fview">Translate</a> this page.</li>
+								<li>Made with <a href="http://www.barnraiser.org/roundhouse">Roundhouse</a></li>
+								<li><a href="/manage">Manage</a></li>
+							</ul>
+		</div>
+		
+		<div style="clear:both;"></div>
+
+		<div id="id_session_reload_image">
+			<img name="session_reload_image" src="/get_file.php?reloadsession=1" alt="" />
+		</div>
+	</div>
+</body>
+</html>

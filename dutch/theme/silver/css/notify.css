@@ -1,0 +1,19 @@
+@media print {
+}
+
+@media screen {
+
+}
+
+@media screen,print {
+	#col_left { float:left; display: inline; width: 548px; }
+	#col_right { float:left; width: 200px;  margin-left:30px; }
+
+	#box_notifications { border-width: 0px; }
+	#box_notifications .box_header h1 { margin-bottom: 20px; font-size: 1.2em; }
+	
+	#box_shared .box_body img { float: left; margin-right: 10px; }
+
+	#box_networks .box_body ul { max-height: 300px; overflow-y: scroll; }
+
+}

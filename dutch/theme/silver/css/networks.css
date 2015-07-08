@@ -1,0 +1,19 @@
+@media print {
+}
+
+@media screen {
+
+}
+
+@media screen,print {
+	#col_left { float:left; display: inline; width: 548px; }
+	#col_right { float:left; width: 200px;  margin-left:30px; }
+
+	#box_network_add textarea { width: 335px; height: 4em; }
+	#box_network_add input[type="text"] { width: 335px; }
+	#box_network_add label { float: left; width: 110px; margin-right: 25px; }
+
+	#box_network { border-width: 0px; }
+	#box_network .box_header h1 { font-size: 1.2em; }
+	
+}
